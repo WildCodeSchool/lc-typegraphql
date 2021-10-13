@@ -17,6 +17,8 @@ async function start() {
 
   const schema = await buildSchema({
     resolvers: [WilderResolver],
+    // automatically create `schema.gql` file with schema definition in project's working directory
+    emitSchemaFile: true,
   });
   // Create the GraphQL server
   const server = new ApolloServer({
